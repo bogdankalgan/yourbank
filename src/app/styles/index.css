@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+html {
+  overflow-x: clip;
+}
+
+body {
+  background: #1A1A1A;
+  overflow-x: clip;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 150px;
+
+  @media (max-width: 1441px) {
+    gap: 120px;
+  }
+
+  @media (max-width: 391px) {
+    gap: 80px;
+  }
+}
+
+@theme {
+  /*Colors*/
+  --color-green-60: #CAFF33;
+  --color-green-65: #D1FF4D;
+  --color-grey-10: #1A1A1A;
+  --color-grey-11: #1C1C1C;
+  --color-grey-15: #262626;
+  --color-grey-20: #333333;
+  --color-grey-30: #4C4C4D;
+  --color-grey-35: #59595A;
+  --color-grey-70: #B3B3B3;
+  --color-grey-75: #BFBFBF;
+  --color-grey-shades-70: #B3B3B3;
+  --color-absolute-white: #FFFFFF;
+  --color-green-btn: #22251B;
+
+  /*Screen sized*/
+  --breakpoint-tablet: 1441px;
+  --breakpoint-mobile: 391px;
+
+  /*Fonts*/
+  --font-lexend: "Lexend", sans-serif;
+
+  /*Gaps*/
+  --gap-120: 120px;
+  --gap-150: 150px;
+  --gap-20: 20px;
+  --gap-80: 80px;
+  --gap-30: 30px;
+
+  /*Padding*/
+  --padding-150: 150px;
+  --padding-100: 100px;
+  --padding-80: 80px;
+  --padding-76: 76px;
+  --padding-20: 20px;
+  --padding-13: 13px;
+
+  /*Widths*/
+  --width-38: 38px;
+  --width-445: 445px;
+
+  /*Heights*/
+  --height-38: 38px;
+
+  /*Font sizes*/
+  --text-15: 15px;
+  --text-58: 58px;
+  --text-40: 40px;
+  --text-16: 16px;
+}
+
+
+@layer base {
+  body {
+    @apply font-lexend flex flex-col gap-150 max-tablet:gap-32 max-mobile:gap-16
+  }
+
+  h2 {
+    @apply text-white text-5xl font-medium leading-[150%] max-tablet:text-4xl max-mobile:text-[28px]
+  }
+
+  h2 > span {
+    @apply text-green-60
+  }
+
+  p {
+    @apply leading-[150%] text-lg font-light text-white max-mobile:text-sm
+  }
+
+  h3 {
+    @apply text-absolute-white font-medium text-lg leading-[150%]
+  }
+
+  h4 {
+    @apply text-absolute-white font-light text-15
+  }
+
+  input::placeholder {
+    @apply text-absolute-white text-lg font-medium leading-7
+  }
+}
+
+@layer utilities {
+  .border-gradient-green {
+      border: 1px solid transparent;
+      background: linear-gradient(#1A1A1A, #1A1A1A) padding-box, linear-gradient(210deg, #404928 0%, #262626 15%, #262626 85%, #404928 100%) border-box;
+  }
+
+  .gradient-our-product-card {
+    --gradient-start: -500%;
+    background: linear-gradient(#CAFF33 var(--gradient-start), #1B1A1B 100%);
+  }
+
+  .gradient-card-border {
+    border: 1px solid transparent;
+    background: linear-gradient(#CAFF33 var(--gradient-start, -500%), #1B1A1B 100%) padding-box, linear-gradient(180deg, #CAFF33 0%, transparent 100%) border-box;
+  }
+  .benefit-card-border::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(120deg, rgba(202, 255, 51,
+  0.15) 0%, transparent 20%, transparent 80%, rgba(202, 255,
+  51, 0.15) 100%);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box,
+  linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+  }
+}
