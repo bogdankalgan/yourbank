@@ -2,7 +2,7 @@
 
 A fully responsive banking website built with **React 19**, **Three.js**, and **Tailwind CSS v4**. Features interactive 3D WebGL backgrounds, custom GLSL shaders, smooth animations, and a complete authentication flow with Supabase.
 
-> **Live Demo:** [yourbank.vercel.app](https://yourbank.vercel.app)
+> **Live Demo:** [https://yourbank-pi.vercel.app/](https://yourbank-pi.vercel.app/)
 
 ## Features
 
